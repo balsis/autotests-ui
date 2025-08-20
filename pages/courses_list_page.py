@@ -14,7 +14,7 @@ class CoursesListPage(BasePage):
         self.empty_view_title = page.get_by_test_id('courses-list-empty-view-title-text')
         self.empty_view_description = page.get_by_test_id('courses-list-empty-view-description-text')
 
-        self.course_title = page.get_by_test_id('course-widget-title-text').
+        self.course_title = page.get_by_test_id('course-widget-title-text')
         self.course_image = page.get_by_test_id('course-preview-image')
         self.course_max_score_text = page.get_by_test_id('course-max-score-info-row-view-text')
         self.course_min_score_text = page.get_by_test_id('course-min-score-info-row-view-text')
