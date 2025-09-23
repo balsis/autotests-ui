@@ -2,3 +2,4 @@ playwright==1.54.0
 pytest==8.4.1
 pytest-playwright==0.7.0
 pytest-rerunfailures==15.1
+allure-pytest==2.15.0
