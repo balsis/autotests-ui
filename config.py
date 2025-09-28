@@ -27,6 +27,7 @@ class TestData(BaseSettings):
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
+        extra='allow',
         env_file=".env",
         env_file_encoding="utf-8",
         env_nested_delimiter=".",
@@ -39,7 +40,7 @@ class Settings(BaseSettings):
     test_data: TestData
     videos_dir: DirectoryPath
     tracing_dir: DirectoryPath
-    allure_results_dir: DirectoryPath  # Добавили новое поле
+    allure_results_dir: DirectoryPath  
     browser_state_file: FilePath
 
     def get_base_url(self) -> str:
