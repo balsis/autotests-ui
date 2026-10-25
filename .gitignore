@@ -213,3 +213,7 @@ coverage-results
 coverage-report.json
 coverage-history.json
 
+/browser-state.json
+/allure-results/
+/tracing/
+/videos/
