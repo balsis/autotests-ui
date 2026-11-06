@@ -27,6 +27,8 @@ python -m playwright install
 
 Configuration is loaded from `.env` by `config.py`. Preserve its Pydantic nested-key syntax and never expose or replace credentials. Important settings include `APP_URL`, `HEADLESS`, `BROWSERS`, `TEST_USER.*`, `TEST_DATA.IMAGE_PNG_FILE`, and `UI_COVERAGE_*`.
 
+Never serialize `settings.model_dump()` or credentials into Allure attachments, logs, committed files, or externally uploaded artifacts. Allowlist only non-sensitive environment fields in reports.
+
 ## Running tests
 
 `pytest.ini` enables verbose output, Allure results, and automatic xdist parallelism.
@@ -78,6 +80,10 @@ Follow the established test structure: class-level pytest markers and Allure hie
 Name files `test_*.py`, classes `Test*`, and functions `test_*`. Keep browser teardown intact: each test context records trace and video and attaches them to Allure.
 
 Static images, fonts, and media are normally aborted in `mock_static_resources()`. If a scenario must verify one of them, add a narrow exception rather than disabling the optimization globally.
+
+## Documentation
+
+Keep `docs/ARCHITECTURE.md` and `docs/IMPLEMENTATION.md` concise and update them when changes affect layers, configuration, browser lifecycle, CI, covered flows, or known limitations. Document verified behavior only; distinguish a static check from a run against LMS.
 
 ## Verification and handoff
 
